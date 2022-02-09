@@ -20,6 +20,7 @@ cor(Salary,lin_predict)
 #r=0.978
 lin_rmse=sqrt(mean(lin_Error**2))
 lin_rmse
+## practice
 #rmse=5592.044
 
 
