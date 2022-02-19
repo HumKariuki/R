@@ -96,4 +96,4 @@ confint(model4)
 predict(model4,interval='predict')
 rmse=sqrt(mean(Error4**2))
 rmse
-#rmse=32.36
+##rmse=32.36
