@@ -186,6 +186,8 @@ Pull requests are welcome. Enjoy!
 <a name="create"></a>
 # 7. Creating Table Query
 
+
+
 ### **CREATE**: create a table
 * `CREATE TABLE` table_name `(` <br />
    `column1` `datatype`, <br />
