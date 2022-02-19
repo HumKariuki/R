@@ -9,6 +9,8 @@ dataset$State<- factor(dataset$State, levels= c("New York", "California", "Flori
 
 ## splitting data 
 
+
+
 library(caTools)
 set.seed(123)
 split=sample.split(dataset$Profit, SplitRatio = 0.8)
