@@ -11,6 +11,7 @@ dataset$State<- factor(dataset$State, levels= c("New York", "California", "Flori
 
 
 
+
 library(caTools)
 set.seed(123)
 split=sample.split(dataset$Profit, SplitRatio = 0.8)
@@ -28,8 +29,10 @@ regressor3<- lm(formula = Profit~ R.D.Spend+ Marketing.Spend , data = trainingSe
 summary(regressor3)
 regressor4<- lm(formula = Profit~ R.D.Spend, data = trainingSet)
 summary(regressor4)
+
 ## Exporting diffrent multiple Linear regression output
 library(texreg)
+
 texreg::htmlreg(list(regressor, regressor2, regressor3, regressor4),file='Linear regression output.doc')
 
 
