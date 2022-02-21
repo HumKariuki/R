@@ -4,7 +4,7 @@ View(del_time)
 attach(del_time)
 plot(Sorting.Time,Delivery.Time,main='scatter')
 cor(Sorting.Time,Delivery.Time)
-#r=0.825
+##r=0.825
 
 
 #############Linear Model###############
@@ -25,7 +25,7 @@ rmse
 #rmse=2.79
 
 
-###############Log Transformation###############
+##############Log Transformation###############
 cor(log(Sorting.Time),Delivery.Time)
 #r=0.833
 log_model<-lm('Delivery.Time~log(Sorting.Time)',data=del_time)
@@ -46,7 +46,7 @@ rmse_log
 
 
 
-######################Exponential Transformartion####################
+###################Exponential Transformartion####################
 cor(Sorting.Time,log(Delivery.Time))
 #r=0.843
 exp_model<-lm('log(Delivery.Time)~Sorting.Time',data=del_time)
@@ -70,7 +70,7 @@ rmse_exp
 
 
 
-##################Quadratic Transformation###############
+#################Quadratic Transformation###############
 cor(Sorting.Time*Sorting.Time,Delivery.Time)
 #r=0.79
 Quad_model<-lm('Delivery.Time~Sorting.Time+Sorting.Time*Sorting.Time',data=del_time)
@@ -87,6 +87,6 @@ confint(Quad_model)
 predict(Quad_model,interval='predict')
 rmse_Quad=sqrt(mean(Error_Quad**2))
 rmse_Quad
-#rmse=2.79
+##rmse=2.79
 
 
