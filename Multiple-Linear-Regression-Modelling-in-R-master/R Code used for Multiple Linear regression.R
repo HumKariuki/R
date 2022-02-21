@@ -39,6 +39,7 @@ texreg::htmlreg(list(regressor, regressor2, regressor3, regressor4),file='Linear
 ## predicting the test set result by different modeling output
 y_pred1<- predict(regressor1, newdata= testSet)
 y_pred2<- predict(regressor2, newdata= testSet)
+
 y_pred3<- predict(regressor3, newdata= testSet)
 y_pred4<- predict(regressor4, newdata= testSet)
 testSet$Predict1 <- y_pred1
