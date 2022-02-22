@@ -12,6 +12,12 @@ summary(lin_model)
 lin_predict<-predict(lin_model)
 lin_predict
 lin_Error<-Salary-lin_predict
+
+
+
+
+
+
 lin_Error
 ggplot(data=sal_hike,aes(x=YearsExperience,y=Salary))+geom_point(color='red')+geom_line(color='blue',data=sal_hike,aes(x=YearsExperience,y=lin_predict))
 confint(lin_model)
