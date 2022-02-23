@@ -14,6 +14,9 @@ insert into customers (id,name,age,address,salary)VALUES (4,'Mary',22,'Murarandi
 insert into customers (id,name,age,address,salary)VALUES (5,'Rose',55,'Murarandia2',20000.00);
 insert into customers (id,name,age,address,salary)VALUES (6,'Lucy',17,'Kangema',13000.00);
 insert into customers (id,name,age,address,salary)VALUES (7,'Ken',67,'Thika',303000.00);
+insert into customers (id,name,age,address,salary)VALUES (8,'Ann',87,'Zion',303000.00);
+insert into customers (id,name,age,address,salary)VALUES (9,'Stacy',67,'Kisumu',103000.00);
+
 
 SELECT
     * FROM
