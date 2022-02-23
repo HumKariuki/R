@@ -16,7 +16,8 @@ insert into customers (id,name,age,address,salary)VALUES (6,'Lucy',17,'Kangema',
 insert into customers (id,name,age,address,salary)VALUES (7,'Ken',67,'Thika',303000.00);
 insert into customers (id,name,age,address,salary)VALUES (8,'Ann',87,'Zion',303000.00);
 insert into customers (id,name,age,address,salary)VALUES (9,'Stacy',67,'Kisumu',103000.00);
-insert into customers (id,name,age,address,salary)VALUES (10,'Purity',97,'Kangema',603000.00);
+insert into customers (id,name,age,address,salary)VALUES (12,'Purity',97,'Kangema',603000.00);
+
 
 
 
