@@ -42,7 +42,7 @@ WHERE prod_subcategory_desc ='Cameras'
 AND calendar_year_id >='1803';
 
 
-rem  although the report looks ok this is actually more by chance because
+rem  although the report lookss ok this is actually more by chance because
 rem  the data happens to be in the correct order in our fact table.
 rem  To make sure we always get the data back in the correct order
 rem  it is important to include a final ORDER BY clause to ensure the running
