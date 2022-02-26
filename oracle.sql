@@ -22,9 +22,24 @@ insert into customers (id,name,age,address,salary)VALUES (11,'','Ann Imelda',97,
 
 
 
+select *from customers order by name DESC;
 
 
-
+select *from customers order by age asc;
+from table customers drop column age;
+    
 SELECT
     * FROM
     customers
+    
+    
+ HELP
+    
+    
+    
+    
+    
+    
+    
+    
+    

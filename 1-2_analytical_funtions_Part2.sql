@@ -76,7 +76,8 @@ rem  set of values. This makes it very easy to create pareto or 80:20 type repor
 rem  and/or filters
 
 SELECT
-  channel_class AS channel,
+
+  channel_class AS channel
   prod_subcategory_desc,
   amount_sold AS sales,  
   RANK() OVER (PARTITION BY channel_class ORDER BY amount_sold DESC) as s_rank,

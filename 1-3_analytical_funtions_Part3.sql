@@ -53,6 +53,7 @@ from products
 GROUP BY prod_category_desc; 
 
 
+
 rem  The following example determines the significance of the difference between the average sales to men and women 
 rem  where the distributions are known to have significantly different (unpooled) variances: 
 

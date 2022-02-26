@@ -294,7 +294,7 @@ rem  Now we get a running total within each quarter where the total resets at th
 rem  What's next.....
 
 rem  now we can extend the example to show the cumulative quarterly sales, total quarterly sales and
-rem  total sales for our cameras subcategory.
+rem  total sales for our cameras subcategory .
 
 SELECT
  prod_subcategory_desc AS subcategory,
