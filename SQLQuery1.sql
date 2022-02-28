@@ -12,7 +12,6 @@ updates-- it is used for modifying the existing codes
 delete -- it will delete the records from tables NB if use dont use where clause ie where you want 
 the data to be deleted it will delete all recods from the table
 
-
 DDL -- Used for the folliwing 
 Create, Alter , Drop
 create-- we can create specific objects in database like tables, functions, databases, procedures etc

@@ -188,8 +188,7 @@ PIVOT (SUM(amount_sold)
 rem  actually needs the following to work correctly:
 
 SELECT   
-*
-FROM
+* FROM
 (SELECT 
   DECODE(GROUPING(calendar_year), 1, 'All Years'
         , calendar_year) AS calendar_year,
