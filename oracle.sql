@@ -189,6 +189,48 @@ INSERT INTO customers (
     503000.00
 );
 
+INSERT INTO customers (
+    id,
+    name,
+    age,
+    address,
+    salary
+) VALUES (
+    14,
+    'Mary',
+    98,
+    'Nyeri',
+    503000.00
+);
+
+INSERT INTO customers (
+    id,
+    name,
+    age,
+    address,
+    salary
+) VALUES (
+    15,
+    'Rebecca',
+    98,
+    'Nyeri',
+    603000.00
+);
+
+INSERT INTO customers (
+    id,
+    name,
+    age,
+    address,
+    salary
+) VALUES (
+    16,
+    'Ken',
+    98,
+    'Nyeri',
+    503000.00
+);
+
 SELECT
     *
 FROM
