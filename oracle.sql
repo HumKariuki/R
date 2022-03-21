@@ -35,6 +35,7 @@ INSERT INTO customers (
     150000.00
 );
 
+
 INSERT INTO customers (
     id,
     name,
