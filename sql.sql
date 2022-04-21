@@ -296,7 +296,7 @@ update jecinta set TimeAdded=CURRENT_TIMESTAMP where id=2
 select * from jecinta
 
 update jecinta set LastName='Kariuki' WHERE id=3
-update jecinta set TimeAdded=CURRENT_TIMESTAMP where id=3
+update jecinta set TimeAdded=CURRENT_TIMESTAMP where id=1,id=2,id=3,id=4
 update jecinta set id=4 where FirstName='Mary'
 update jecinta set id=5 where TimeAdded=
 
@@ -332,4 +332,20 @@ select cast(cast('6/8/1992' as datetime) -cast ('10/3/1989' as DAtetime) as int)
 
 select DateRegisterded as 'OurDate' from jecinta;
 
-select cast(DateRegisterded as varchar(100)) as 'OurDate' from jecinta;
+select cast(DateRegisterded as char(12)) as 'OurDate' from jecinta;
+
+select cast(cast(01/01/2020 as Datetime) as varchar(max)) as 'Hum'
+select cast( SYSDATETIME() as 
+varchar(max))
+
+select cast(2022/21/5 as datetime)
+
+-- CONVERT FUNCTION
+
+SELECT TOP 3 DateRegisterded as 'The Trade Date'from jecinta
+
+--code 100 start with the month date then year
+select top 3 convert(varchar,DateRegisterded,100) as 'The Trade Date' from jecinta
+select top 3 convert(varchar,DateRegisterded,101) as 'The Trade Date' from jecinta
+select top 3 convert(varchar,DateRegisterded,103) as 'The Trade Date' from jecinta
+select top 3 convert(varchar,DateRegisterded,106) as 'The Trade Date' from jecinta
