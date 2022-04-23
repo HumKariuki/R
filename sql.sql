@@ -295,10 +295,9 @@ update jecinta set TimeAdded=CURRENT_TIMESTAMP where id=2
 
 select * from jecinta
 
-update jecinta set LastName='Kariuki' WHERE id=3
+update jecinta set LastName='Kariuki' WHERE id=2
 update jecinta set TimeAdded=CURRENT_TIMESTAMP where id=1,id=2,id=3,id=4
 update jecinta set id=4 where FirstName='Mary'
-update jecinta set id=5 where TimeAdded=
 
 
 
@@ -349,3 +348,34 @@ select top 3 convert(varchar,DateRegisterded,100) as 'The Trade Date' from jecin
 select top 3 convert(varchar,DateRegisterded,101) as 'The Trade Date' from jecinta
 select top 3 convert(varchar,DateRegisterded,103) as 'The Trade Date' from jecinta
 select top 3 convert(varchar,DateRegisterded,106) as 'The Trade Date' from jecinta
+
+select id,DateRegisterded into nulldemo2 from jecinta
+select *from nulldemo2
+-- The above code creates a new table nulldemo2 and i=add colums id and dateregistered as fro jecinta table
+
+
+
+select *from jecinta
+select *from nulldemo
+
+insert into jecinta (FirstName,LastName) select FirstName,lastName from nulldemo
+-- The above code adds data from nulldemo ie firstname and lastName to jecinta table for culumns specified ie firstName and lastName
+
+set ansi_nulls off
+select *from jecinta where id=null
+
+set ansi_nulls off
+update jecinta set DateRegisterded= getdate() where id=null
+select * from jecinta
+
+set ansi_nulls off 
+update jecinta set TimeAdded=SYSDATETIME() where TimeAdded=null
+
+select convert(varchar,DateRegisterded,106) from jecinta
+
+select CONVERT(varchar(112),id) from jecinta
+
+set ansi_nulls off
+update jecinta set id=1 where LastName='Wambui'
+
+select*from jecinta order by DateRegisterded
