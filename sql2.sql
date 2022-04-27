@@ -72,26 +72,90 @@ AVG (item) for item1 in ([Average])
 
 
 --DATABASE ENCRYPTION
+create database Hum
 
-use master 
+
+use Hum
 go 
-backup database [Students] to disk =N'C:\Backup2\Students.bak'
-
+backup database [Hum] to disk =N'C:\Backup2\Hum'
+select* from tbl_stock
 -- Create a master key
-use Students;
+use Hum;
 GO
 create master key encryption by password = 'Hum@njeri400.';
 go
 
 --create certificate 
-create certificate Students_info with subject ='Students info certificate'
+create certificate tbl_stock with subject ='Item prices on different days'
 go
 
 -- Create encryption key,Encrypted by server certificate
 
-use Students;
+use Hum;
 go
 create database encryption key
 with ALGORITHM =aes_128
-encryption by server certificate Students_info;
+encryption by server certificate tbl_stock;
 go
+
+-- Backup Certificate
+use master
+GO
+backup certificate tbl_stock
+to file ='C:\Backup2\tbl_stock.cer'
+with private key (file='C:\Backup2\tbl_stock_key.pvk',encryption by password='Hum@njeri400.')
+go
+
+-- Enable encryption
+alter database Hum
+set encryption on
+go
+
+---Verify Certificate Details
+use master
+go
+select* from sys.certificates where pvt_key_encryption_type <> 'NA'
+go
+
+--Verify encryption key details
+use master
+go 
+select encryptor_type,key_length,key_algorithm,encryption_state,create_date 
+from sys.dm_database_encryption_keys
+go
+
+
+select * from tbl_stock
+
+
+-- ALWAYS ENCRYPTED
+--What is always encrypted..This is a feature to protect sensitive data,allowing client application to manage the encryption and encryption keys making sure thst only client application can decrypt and see
+--It happens at the client site i.e no one unless the person who encrypted can access the data
+/** Two types of key we shall mostly use 
+1. column master key(CMK)-Used for encrypting CEK
+2. Column encryption key(CEK)-used for securing our data
+That means if one has CMK ine can encryot and decrypt data
+Types of encryption include i)deterministic and ii) Randomised
+In deterministic column can be ised for derching and grouping
+in Randomised column cannot be used for searching
+
+NB: To make sure that no one get acces to your CMK,it is always eremoved from the crient database and transferred to the client machine
+*/
+-- collate is used for always encrypted
+create table Message1 (
+MessageId int identity (1,1) primary key,
+MessageCode char(5) collate latin1_General_BIN2 not null,
+Message Varchar (4000) collate latin1_General_BIN2 not null,
+);
+insert into Message1 (MessageCode,Message)
+values ('AA56B','This is a test message')
+
+select * from Message1
+
+
+
+
+
+
+
+
