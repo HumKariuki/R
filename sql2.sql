@@ -142,6 +142,8 @@ in Randomised column cannot be used for searching
 NB: To make sure that no one get acces to your CMK,it is always eremoved from the crient database and transferred to the client machine
 */
 -- collate is used for always encrypted
+create database hum
+use hum
 create table Message1 (
 MessageId int identity (1,1) primary key,
 MessageCode char(5) collate latin1_General_BIN2 not null,

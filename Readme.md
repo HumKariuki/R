@@ -10,6 +10,9 @@ This Repo contains the Program for the Hack of GitHub Contribution Graph.
 - Copy the files from the folder into your desired repository.
 - Initialize the Repo:
 
+
+
+
 ```
 npm init
 ```
