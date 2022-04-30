@@ -86,7 +86,7 @@ create master key encryption by password = 'Hum@njeri400.';
 go
 
 --create certificate 
-create certificate tbl_stock with subject ='Item prices on different days'
+create certificate tbl_stoc with subject ='Item prices on different days'
 go
 
 -- Create encryption key,Encrypted by server certificate
