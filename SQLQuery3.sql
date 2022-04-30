@@ -53,3 +53,42 @@ go
 
 
 -- Step 1 is to backup the database
+Backup database TESTIDE to disk='C:\Backup2\TESTIDE_unenc.bak' with init,compression
+
+-- Step 2 is to create  the DB MASTER KEY for use in TDE the master key you have to create it in the master database  because it has to exist there
+
+use master;
+go
+create master key
+encryption by password ='INSTANCE1_Use1Strong2Password3Here'
+go
+
+select 
+name,key_length,algorithm_desc,create_date,modify_date
+from sys.symmetric_keys
+
+-- Step 3 is to create the certificate still in the master database
+
+create certificate MyserveCert
+with subject = 'My DEK Certificate'
+go
+-- My server certificate is encrypted by the master key
+--step 4 Is to create  my database encryption key
+-- whenever you see the word server like in below it means its going to look in master
+USE TESTIDE
+go
+create database encryption key
+with algorithm=AES_128
+ENCRYPTION BY SERVER CERTIFICATE MyServeCert
+go
+
+--Step 5 is to backup the certificate
+
+use master
+go
+backup certificate MyServeCert
+to file ='C:\Backup2\MyServeCert.cer'
+with private key(file ='C:\Backup2\MyServeCert.pvk',
+Encryption by password = 'My1Secure2Password!')
+go
+
