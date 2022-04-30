@@ -90,5 +90,6 @@ backup certificate MyServeCert
 to file ='C:\Backup2\MyServeCert.cer'
 with private key(file ='C:\Backup2\MyServeCert.pvk',
 Encryption by password = 'My1Secure2Password!')
+
 go
 
