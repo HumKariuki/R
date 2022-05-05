@@ -92,4 +92,24 @@ with private key(file ='C:\Backup2\MyServeCert.pvk',
 Encryption by password = 'My1Secure2Password!')
 
 go
+--Step 5 is to set the encryption on
+alter database  TESTIDE
+SET ENCRYPTION ON 
+GO
+
+USE MASTER;
+GO
+
+--To see the encryption state 
+
+select 
+db.name,db.is_encrypted,dm.encryption_state,dm.percent_complete,dm.key_algorithm,dm.key_length
+from sys.databases db left outer join sys.dm_database_encryption_keys dm on db.database_id=dm.database_id;
+go
+
+select 
+db.name,db.create_date from sys.databases db where name='TESTIDE'
+go
+Use TESTIDE
+select * from TestTable                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 
